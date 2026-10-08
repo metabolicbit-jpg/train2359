@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>قطار ۲۳:۵۹ | Train 23:59</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{width:100%;height:100%;overflow:hidden;background:#080a18;color:#fff;font-family:'Vazirmatn',Tahoma,Arial,sans-serif;user-select:none;-webkit-user-select:none;overscroll-behavior:none}
+#c{position:fixed;inset:0;width:100%;height:100%;display:block;touch-action:none}
+.hud{position:fixed;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:8px 12px;padding-top:calc(8px + env(safe-area-inset-top));pointer-events:none;z-index:3}
+.clock{font-weight:800;font-size:18px;color:#ffd76a}
+.hudR{display:flex;align-items:center;gap:6px}
+.stn,.scrapB,.hbtn{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:5px;color:#fff}
+.stn{font-size:11px;padding:4px 9px}
+.scrapB{display:flex;align-items:center;gap:4px;padding:4px 8px;font-size:12px;font-weight:700}
+.hbtn{pointer-events:auto;min-width:32px;height:30px;padding:0 6px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;font-family:inherit;cursor:pointer}
+.panel{position:fixed;left:0;right:0;bottom:0;padding:11px 13px;padding-bottom:calc(11px + env(safe-area-inset-bottom));z-index:4;background:linear-gradient(0deg,rgba(6,8,18,.98),rgba(6,8,18,.72) 66%,rgba(6,8,18,0));display:flex;flex-direction:column;gap:7px;align-items:center;max-height:60%;overflow-y:auto}
+.overlay{position:fixed;inset:0;z-index:6;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:22px;background:radial-gradient(ellipse at 50% 26%,rgba(46,34,80,.72),rgba(4,6,14,.97))}
+.hidden{display:none!important}
+#err{position:fixed;inset-inline:8px;top:8px;z-index:99;background:#5a1414;color:#fff;font-size:11px;padding:8px;border-radius:5px;direction:ltr;text-align:left}
+#loadMsg{color:#ccc;font-size:13px;line-height:1.9;max-width:420px}
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<button id="hideBtn"></button>
+<button id="vetBtn" class="hidden"></button>
+<div id="bubble" class="hidden"></div>
+<div class="hud"><div class="clock" id="clock">۲۳:۵۹</div>
+  <div class="hudR"><div class="stn" id="stnBox"></div><div class="scrapB"><span id="scrapIc"></span><span id="scrapVal"></span></div>
+  <button class="hbtn" id="langBtn">EN</button><button class="hbtn" id="musicBtn"></button><button class="hbtn" id="mute"></button></div></div>
+<div class="res" id="res"></div>
+<div class="bars" id="bars"></div>
+<div class="pax" id="pax"></div>
+<div class="panel" id="panel"></div>
+<div class="tnote" id="tnote"></div>
+<div class="overlay" id="loadScreen"><h1>قطار ۲۳:۵۹</h1><div id="loadMsg">در حال بارگذاری…</div>
+  <button class="btn hidden" id="retryBtn">تلاش مجدد</button></div>
+<div class="overlay hidden" id="titleScreen"><h1 id="titleH1"></h1><div class="tag" id="titleTag"></div>
+  <button class="btn" id="startBtn"></button><button class="btn ghost" id="helpBtnTitle"></button></div>
+<div class="overlay hidden" id="introScreen"><div class="tag" id="introText"></div><button class="btn hidden" id="introNext"></button></div>
+<div class="overlay hidden" id="pickScreen"><h1 id="pickTitle"></h1><div class="tag" id="pickSub"></div><div id="pickList"></div></div>
+<div class="overlay hidden" id="endScreen"><h1 id="endTitle"></h1><div class="tag" id="endDesc"></div><div class="stats" id="endStats"></div>
+  <button class="btn" id="restartBtn"></button></div>
+<div class="sheet hidden" id="journalScreen"><h2 id="journalTitle"></h2><div id="clueList"></div><button class="btn ghost" id="journalBack"></button></div>
+<div class="sheet hidden" id="achScreen"><h2 id="achTitle"></h2><div id="achList"></div><button class="btn ghost" id="achBack"></button></div>
+<div class="sheet hidden" id="helpScreen"><h2 id="helpTitle"></h2><div id="guideBody"></div><button class="btn ghost" id="helpBack"></button></div>
+<div class="brand">Train 23:59 · Paean</div>
+<script>window.onerror=function(m,s,l,c){var b=document.getElementById('err');if(b){b.textContent='JS: '+m+' '+l+':'+c;b.classList.remove('hidden');}};</script>
+<script>
+(function(){
+var BASE='https://cdn.jsdelivr.net/gh/metabolicbit-jpg/train2359@main/';
+var VER='v41';
+var MODS=['src/lang.js','src/audio.js','src/render.js','src/ui.js','src/core.js','src/main.js'];
+function cg(k){try{return localStorage.getItem(k);}catch(e){return null;}}
+function cs(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+function inject(t){var s=document.createElement('script');s.textContent=t;document.body.appendChild(s);}
+function fail(){document.getElementById('loadMsg').textContent='برای اولین بار به اینترنت وصل شو و بازی را باز کن (بعد آفلاین هم کار می‌کند).';document.getElementById('retryBtn').classList.remove('hidden');}
+function load(i){
+  if(i>=MODS.length){ if(typeof T59boot==='function')T59boot(); else document.getElementById('loadMsg').textContent='خطا در راه‌اندازی.'; return; }
+  var src=MODS[i],key='m_'+VER+'_'+src;
+  fetch(BASE+src,{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.text();})
+    .then(function(t){cs(key,t);inject(t);load(i+1);})
+    .catch(function(){var c=cg(key);if(c){inject(c);load(i+1);}else{fail();}});
+}
+document.getElementById('retryBtn').addEventListener('click',function(){location.reload();});
+load(0);
+})();
+</script>
+</body>
+</html>

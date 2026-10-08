@@ -1,7 +1,6 @@
 {
 "ui":{
-"ttl":"قطار ۲۳:۵۹|Train 23:59",
-"start":"شروع سفر|Start journey","help":"راهنمای بازی|How to play","cont":"ادامه|Continue",
+"ttl":"قطار ۲۳:۵۹|Train 23:59","start":"شروع سفر|Start journey","help":"راهنمای بازی|How to play","cont":"ادامه|Continue",
 "tag":"هر شب، رأس ساعت ۲۳:۵۹، قطاری از جایی ناشناخته حرکت می‌کند.\nتو سوارش شده‌ای. مقصد؟ هیچ‌کس نمی‌داند.\nمنابع را مدیریت کن، راز را کشف کن، زنده بمان.|Every night at 23:59 a train departs from somewhere unknown.\nYou are aboard. Destination? No one knows.\nManage resources, uncover the secret, stay alive.",
 "pick":"اولین همراهت را انتخاب کن|Choose your first companion","pickS":"هر مسافر نقش و مهارت خودش را دارد.|Each passenger has a unique role and skill.",
 "restart":"سفر مجدد|Play again","journal":"دفترچهٔ سرنخ‌ها|Clue journal","gotIt":"فهمیدم|Got it","back":"بازگشت|Back",
@@ -27,44 +26,11 @@
 "stns":"ایستگاه‌ها: |Stations: ","comp":"همراهان: |Companions: ","cluesW":"سرنخ‌ها: |Clues: ",
 "sane":"روان: |Sanity: ","foodW":"غذا: |Food: ","fuelW":"سوخت: |Fuel: ","noClue":"هنوز سرنخی پیدا نکرده‌ای. کاوش کن.|No clues yet. Go explore."
 },
-"res":[{"k":"food","l":"غذا|Food","c":"#ffb454","cr":20},{"k":"fuel","l":"سوخت|Fuel","c":"#5ad1ff","cr":10},{"k":"time","l":"زمان|Time","c":"#c89bff","cr":1},{"k":"sanity","l":"روان|Sanity","c":"#6ee7a8","cr":30}],
-"clues":{
-"c1":"یادداشتی با دست‌خطی لرزان: «او دوباره سوار شد.»|A note in shaky hand: 'He boarded again.'",
-"c2":"ضبط‌صوتی فرسوده که فقط صدای ریل را پخش می‌کند و بعد، صدای نفسِ کسی.|A worn tape that plays the rails, then someone breathing.",
-"c3":"علامتی روی دیوار: دایره‌ای که خطی از میانش گذشته.|A mark on the wall: a circle crossed by a line.",
-"c4":"جسدی بی‌نام کنار ریل با بلیتی بی‌تاریخ.|A nameless body by the rails with a dateless ticket.",
-"c5":"نقشهٔ نیم‌سوز که مسیری بی‌جغرافیا نشان می‌دهد.|A half-burnt map to a place on no chart.",
-"c6":"کتیبه‌ای بر سکوی آخر: «قطار کسی را می‌برد که وقتش تمام شده.»|An inscription on the last platform: 'The train takes those whose time is up.'"},
-"loc":[
-{"id":"shop","nm":"فروشگاه متروکه|Abandoned shop","o":[{"w":3,"r":"قفسه‌ای پر از کنسرو.|A shelf of intact cans.","f":{"food":14}},{"w":2,"r":"جعبه‌ای پر از آهن‌پاره.|A crate of scrap metal.","f":{"scrap":12}},{"w":3,"r":"هیچ نبود جز گرد و خاک.|Nothing but dust.","f":{}},{"w":1,"r":"پشت قفسه‌ها صدایی شنیدی.|A sound behind the shelves.","f":{"sanity":-6}}]},
-{"id":"houses","nm":"خانه‌های خالی|Empty houses","o":[{"w":2,"r":"خوابگاهی گرم و رهاشده.|A warm abandoned room.","f":{"sanity":8}},{"w":3,"r":"کنسرو و آب پیدا کردی.|You found cans and water.","f":{"food":10}},{"w":2,"r":"چیز به‌دردبخوری نبود.|Nothing useful.","f":{}},{"w":2,"r":"کسی پشت پنجره بود که نبود.|Someone was at the window who was not.","f":{"sanity":-8},"cl":"c3"}]},
-{"id":"tunnel","nm":"تونل زیرزمینی|Underground tunnel","o":[{"w":2,"r":"انبار سوختِ قاچاقی.|A smuggled fuel cache.","f":{"fuel":18,"scrap":6}},{"w":3,"r":"تاریکی و رطوبت؛ اعصابت خورد شد.|Dark and damp; your nerves frayed.","f":{"sanity":-9}},{"w":1,"r":"ضبط‌صوتی قدیمی کنار ریل.|An old tape recorder by the rails.","f":{},"cl":"c2"},{"w":2,"r":"هیچ‌چیز جز صدای قطره‌ها.|Nothing but dripping.","f":{"time":-20}}]},
-{"id":"tower","nm":"برج مراقبت|Watchtower","o":[{"w":2,"r":"از بالا مسیر را دیدی.|From above you read the route.","f":{"fuel":8}},{"w":2,"r":"دوربینی که به تو خیره است.|A spyglass still fixed on you.","f":{"sanity":-6},"cl":"c4"},{"w":3,"r":"منظره‌ای آرام.|A calm view.","f":{"sanity":6}}]},
-{"id":"clinic","nm":"درمانگاه متروکه|Abandoned clinic","o":[{"w":2,"r":"دارو و باند سالم.|Intact medicine and bandages.","f":{"scrap":10,"sanity":6}},{"w":2,"r":"پرونده‌هایی پاره‌شده.|Torn files.","f":{},"cl":"c1"},{"w":3,"r":"بوی الکل و مرگ.|The smell of alcohol and death.","f":{"sanity":-7}}]},
-{"id":"depot","nm":"انبار سوخت|Fuel depot","o":[{"w":3,"r":"مخزنی نیمه‌پر.|A half-full tank.","f":{"fuel":22}},{"w":2,"r":"چند بشکهٔ خالی.|A few empty barrels.","f":{"scrap":10}},{"w":1,"r":"نگهبانی بیدار شد.|A guard woke up.","f":{"food":-6,"sanity":-6}}]},
-{"id":"cemetery","nm":"گورستان|Cemetery","o":[{"w":2,"r":"سنگ‌قبری با نامِ خودت.|A gravestone with your own name.","f":{"sanity":-12},"cl":"c6"},{"w":3,"r":"چیزهایی که جا مانده.|Things left behind.","f":{"scrap":12}},{"w":2,"r":"دعایی خواندی و آرام شدی.|You prayed and grew calm.","f":{"sanity":7}}]},
-{"id":"old","nm":"سکوی قدیمی|Old platform","o":[{"w":2,"r":"تابلویی که پاک شده بود.|A sign wiped clean.","f":{},"cl":"c5"},{"w":3,"r":"کیفی پر از ضایعات فلزی.|A bag of metal scrap.","f":{"scrap":14}},{"w":2,"r":"سکوتی که توی سرت پیچید.|A silence that rang in your head.","f":{"sanity":-4}}]},
-{"id":"farm","nm":"مزرعهٔ رهاشده|Abandoned farm","o":[{"w":3,"r":"ذرت و سیب‌زمینی؛ سیر شدی.|Corn and potatoes; you ate well.","f":{"food":20}},{"w":2,"r":"ابزار کشاورزی.|Farm tools.","f":{"scrap":9}},{"w":2,"r":"اجاقی تازه روشن بود.|A stove still warm.","f":{"sanity":-5}}]}
-],
-"pool":[
-{"id":"sara","nm":"سارا|Sara","ro":"پزشک|Doctor","sk":"doctor","bg":"پرستارِ شب‌کار؛ دنبال خواهرش.|A night nurse looking for her sister."},
-{"id":"reza","nm":"رضا|Reza","ro":"مهندس|Engineer","sk":"engineer","bg":"تعمیرکار قطار؛ دست‌هایش سیاهِ روغن.|A train mechanic with oil-black hands."},
-{"id":"amin","nm":"امین|Amin","ro":"نگهبان|Guard","sk":"guard","bg":"نگهبانِ سابق؛ به کسی اعتماد ندارد.|A former guard who trusts no one."},
-{"id":"nast","nm":"نسترن|Nastaran","ro":"آشپز|Cook","sk":"cook","bg":"آشپزی که از غذا حرف می‌زند.|A cook who only talks of food."},
-{"id":"parviz","nm":"پرویز|Parviz","ro":"رهبر|Leader","sk":"leader","bg":"پیرمردی که زیاد سفر کرده.|An old man, well-travelled."},
-{"id":"nika","nm":"نیکا|Nika","ro":"کودک|Child","sk":"none","bg":"کودکی که کسی نمی‌داند چطور سوار شد.|A child no one knows how boarded."}
-],
-"skill":{"doctor":"درمان|Heals","engineer":"تعمیر ارزان‌تر|Cheaper repairs","guard":"دفاع|Defense","cook":"کمتر غذا|Less food","leader":"افزایش روان|Raises sanity","none":"همراهِ کوچک|Little companion"},
-"upg":[{"id":"engine","nm":"موتور|Engine","ic":"gear","co":30,"d":"سوخت کمتر|Less fuel"},{"id":"armor","nm":"زره|Armor","ic":"shield","co":28,"d":"آسیب کمتر|Less damage"},{"id":"storage","nm":"انبار|Storage","ic":"box","co":22,"d":"پاداش بیشتر|More rewards"},{"id":"clinic","nm":"درمانگاه|Clinic","ic":"cross","co":34,"d":"درمان خودکار|Auto-heal"},{"id":"kitchen","nm":"آشپزخانه|Kitchen","ic":"food","co":26,"d":"غذای کمتر|Less food"},{"id":"watch","nm":"برج|Watchtower","ic":"eye","co":32,"d":"دید بیشتر|Better sight"}],
-"arch":[{"id":"ind","nm":"صناعی|Industrial","f":4,"u":3},{"id":"agr","nm":"کشاورزی|Agricultural","f":2,"u":5},{"id":"town","nm":"شهری|Town","f":3,"u":4},{"id":"ruin","nm":"ویرانه|Ruins","f":5,"u":6}],
-"sn":["خاکستر|Ash","باد|Wind","کافهٔ میان‌راهی|Roadside cafe","پل شکسته|Broken bridge","کودکان|Children","تونل تاریک|Dark tunnel","باران|Rain","بازار شبانه|Night market","سکوت|Silence","تعمیرگاه|Workshop","گل|Flowers","گردنهٔ کوه|Mountain pass","آینه|Mirror","بارِ رهاشده|Freight","سپیده|Dawn"],
-"ev":[
-{"t":"راهزنان از تاریکی حمله کردند!|Raiders attack from the dark!","ch":[{"t":"بجنگ|Fight","f":{"sanity":-8},"r":"با سنگ و آهن دفاع کردید.|You defended with stones and iron."},{"t":"رشوه بده (۱۵ ضایعات)|Bribe (15 scrap)","co":{"scrap":15},"f":{"sanity":-2},"r":"پول گرفتند و رفتند.|They took the money and left."},{"t":"فرار کن (سوخت ۱۰−)|Flee (fuel -10)","f":{"fuel":-10,"sanity":-4},"r":"با سرعت گریختید.|You sped away."}]},
-{"t":"موتور جا ماند و قطار کُند شد.|The engine stalled and the train slowed.","ch":[{"t":"تعمیر کن (۱۰ ضایعات)|Repair (10 scrap)","co":{"scrap":10},"f":{},"r":"با آهن‌پاره درستش کردی.|You fixed it with scrap."},{"t":"ادامه بده|Push on","f":{"fuel":-8,"sanity":-5},"r":"قطار ناله‌کنان رفت.|The train groaned on."}]},
-{"t":"مسافری بیمار شد و تب کرد.|A passenger fell sick with fever.","ch":[{"t":"دارو بده (۱۲ ضایعات)|Medicine (12 scrap)","co":{"scrap":12},"f":{"sanity":4},"r":"دارو اثر کرد.|The medicine worked."},{"t":"استراحت بده (زمان)|Rest (time)","f":{"time":-20,"sanity":-3},"r":"تب بالا رفت.|The fever rose."},{"t":"نادیده بگیر|Ignore","f":{"sanity":-9},"r":"سرفه‌هایش رهایت نکرد.|Their coughs haunted you."}]},
-{"t":"طوفانی سهمگین از راه رسید.|A violent storm rolled in.","ch":[{"t":"آهسته برو|Go slow","f":{"time":-20,"fuel":-4},"r":"آهسته و سالم گذشتی.|You passed slowly and safely."},{"t":"پرش کن|Dash through","f":{"fuel":-10,"sanity":-7},"r":"از دل طوفان پریدی.|You leapt through the storm."}]},
-{"t":"سیگنالی ناشناس روی رادیو پیچید.|An unknown signal hisses on the radio.","ch":[{"t":"گوش کن|Listen","f":{"sanity":5},"cl":"c2","r":"صدایی حرف می‌زد... شاید خودت.|A voice spoke... maybe your own."},{"t":"خاموش کن|Switch off","f":{"sanity":-2},"r":"سکوت برگشت.|Silence returned."}]},
-{"t":"قطار به سکویی خالی رسید؛ چراغ‌ها روشن بودند.|The train reached an empty platform, yet the lights were on.","ch":[{"t":"پیاده شو و بگرد|Step off and search","f":{"sanity":-10},"cl":"c4","r":"چیزی دیدی که نباید.|You saw what you should not have."},{"t":"عبور کن|Pass by","f":{"sanity":-3},"r":"از کنارِ سایه‌ها گذشتی.|You passed the shadows by."}]}
+"res":[
+{"k":"food","l":"غذا|Food","c":"#ffb454","cr":20},
+{"k":"fuel","l":"سوخت|Fuel","c":"#5ad1ff","cr":10},
+{"k":"time","l":"زمان|Time","c":"#c89bff","cr":1},
+{"k":"sanity","l":"روان|Sanity","c":"#6ee7a8","cr":30}
 ],
 "intro":"ساعت ۲۳:۵۹ است.\nقطار با سوتِ بلندی راه می‌افتد.\nنمی‌دانی چطور سوار شدی، مقصد کجاست.\nیادداشتی روی صندلی:\n«هر کس را سوار کنی بر تو اثر می‌گذارد.\nمنابع کم است. زنده بمان.»|It is 23:59.\nThe train lurches off with a long whistle.\nYou do not know how you boarded, nor where it goes.\nA note on the seat:\n'Whoever you let on will change you.\nSupplies are low. Stay alive.'",
 "endings":{
@@ -73,11 +39,5 @@
 "mystery":{"t":"پایانِ مرموز|Ending: Mystery","d":"حقیقت را کشف کردی و بخشی از قطار شدی.|You found the truth and became part of the train."},
 "ruin":{"t":"پایانِ نابودی|Ending: Ruin","d":"قطار در تاریکی از هم پاشید.|The train fell apart in the dark."},
 "bitter":{"t":"پایانِ تلخ|Ending: Bitter","d":"رسیدید، اما خسته و کم.|You arrived, weary and few."}
-},
-"guide":[
-{"i":"target","h":"هدف|Goal","p":"تو مسافرِ قطاری مرموزی هستی که در نیمه‌شب حرکت می‌کند. با مدیریت منابع، کاوش و تصمیمِ درست به ایستگاه آخر برس و راز را کشف کن.|You are a passenger on a mysterious midnight train. Manage resources, explore and choose well to reach the last stop and uncover the secret."},
-{"i":"scrap","h":"منابع|Resources","p":"<ul><li><span class='k'>غذا|Food</span> — هر سفر به‌ازای هر مسافر خورده می‌شود؛ زیر ۲۰ = بیماری.|Eaten per passenger each trip; below 20 = sickness.</li></ul>"},
-{"i":"explore","h":"در ایستگاه|At a station","p":"<ul><li><span class='k'>کاوش|Explore</span> — هر مکان ۱ زمان؛ نتیجه تصادفی.|Each spot 1 time; random result.</li></ul>"},
-{"i":"tension","h":"تنش و راز|Tension & mystery","p":"تعقیب‌کننده با هر سفر نزدیک می‌شود؛ اگر به ۱۰۰ برسد بازی تمام است. ۶ سرنخ مسیر پایان را عوض می‌کند — ۴ پایان.|The pursuer closes in each trip; at 100 the game ends. Six clues change the path to one of 4 endings."}
-]
+}
 }

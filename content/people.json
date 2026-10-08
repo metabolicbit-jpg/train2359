@@ -1,20 +1,13 @@
 {
 "pool":[
-{"id":"sara","nm":"سارا|Sara","ro":"پزشک|Doctor","sk":"doctor","bg":"پرستارِ شب‌کار؛ دنبال خواهرش می‌گردد.|A night nurse looking for her sister."},
-{"id":"reza","nm":"رضا|Reza","ro":"مهندس|Engineer","sk":"engineer","bg":"تعمیرکار قطار؛ دست‌هایش همیشه سیاهِ روغن است.|A train mechanic; his hands always black with oil."},
-{"id":"amin","nm":"امین|Amin","ro":"نگهبان|Guard","sk":"guard","bg":"نگهبانِ سابق؛ به کسی اعتماد ندارد.|A former guard who trusts no one."},
-{"id":"nastaran","nm":"نسترن|Nastaran","ro":"آشپز|Cook","sk":"cook","bg":"آشپزِ کافهٔ میان‌راهی؛ از غذا حرف می‌زند.|A roadside cook who only talks about food."},
-{"id":"parviz","nm":"پرویز|Parviz","ro":"رهبر|Leader","sk":"leader","bg":"پیرمردی که زیاد سفر کرده و کم حرف می‌زند.|An old man, well-travelled and quiet."},
-{"id":"nika","nm":"نیکا|Nika","ro":"کودک|Child","sk":"none","bg":"کودکی که کسی نمی‌داند چطور سوار شد.|A child no one knows how boarded."}
+{"id":"sara","nm":"سارا|Sara","ro":"پزشک|Doctor","sk":"doctor","bg":"پرستارِ شب‌کار؛ دنبال خواهرش می‌گردد.|A night nurse looking for her sister.","say":["خواهرم گفت این قطار... تو هم اسمش رو شنیدی؟|My sister said this train... have you heard its name?","اگه کسی مریض شد، خبرم کن. من اینجام.|If anyone falls sick, call me. I am here."]},
+{"id":"reza","nm":"رضا|Reza","ro":"مهندس|Engineer","sk":"engineer","bg":"تعمیرکار قطار؛ دست‌هایش سیاهِ روغن.|A train mechanic with oil-black hands.","say":["موتور رو می‌شناسم. اگه جا بمونه، درستش می‌کنم.|I know the engine. If it stalls, I can fix it.","سکوت نکن رفیق... اینجا سکوت خطرناکه.|Don't go quiet, friend... silence is dangerous here."]},
+{"id":"amin","nm":"امین|Amin","ro":"نگهبان|Guard","sk":"guard","bg":"نگهبانِ سابق؛ به کسی اعتماد ندارد.|A former guard who trusts no one.","say":["به هیچ‌کس اعتماد نکن. حتی به من.|Trust no one. Not even me.","اگه حمله شد، پشت من بایست.|If they attack, stand behind me."]},
+{"id":"nastaran","nm":"نسترن|Nastaran","ro":"آشپز|Cook","sk":"cook","bg":"آشپزِ کافهٔ میان‌راهی؛ از غذا حرف می‌زند.|A roadside cook who only talks about food.","say":["با یه‌کم غذا، برای همه یه چیز گرم می‌پزم.|With a little food, I can cook something warm for everyone.","گرسنگی... بدترین دزدِ شبِ قطاره.|Hunger... the worst thief on a train at night."]},
+{"id":"parviz","nm":"پرویز|Parviz","ro":"رهبر|Leader","sk":"leader","bg":"پیرمردی که زیاد سفر کرده.|An old man, well-travelled.","say":["زیاد سفر کرده‌ام، ولی این قطار... فرق داره.|I have travelled a lot, but this train... is different.","نفس بکش. تو باید به آخر برسی.|Breathe. You must reach the end."]},
+{"id":"nika","nm":"نیکا|Nika","ro":"کودک|Child","sk":"none","bg":"کودکی که کسی نمی‌داند چطور سوار شد.|A child no one knows how boarded.","say":["میشه یه قصه بگی؟|Can you tell me a story?","من گم نشدم... من منتظرَم.|I am not lost... I am waiting."]}
 ],
-"skill":{
-"doctor":"درمان و کاهش بیماری|Heals and reduces illness",
-"engineer":"تعمیر ارزان‌تر|Cheaper repairs",
-"guard":"دفاع در حمله|Defense in attacks",
-"cook":"مصرف غذای کمتر|Less food consumed",
-"leader":"افزایش روان گروه|Raises group sanity",
-"none":"همراهِ کوچک|A little companion"
-},
+"skill":{"doctor":"درمان و کاهش بیماری|Heals and reduces illness","engineer":"تعمیر ارزان‌تر|Cheaper repairs","guard":"دفاع در حمله|Defense in attacks","cook":"مصرف غذای کمتر|Less food consumed","leader":"افزایش روان گروه|Raises group sanity","none":"همراهِ کوچک|A little companion"},
 "upg":[
 {"id":"engine","nm":"موتور|Engine","ic":"gear","co":30,"d":"سوخت کمتر، فرار بهتر|Less fuel, better escape"},
 {"id":"armor","nm":"زره|Armor","ic":"shield","co":28,"d":"آسیب حملات کمتر|Less attack damage"},

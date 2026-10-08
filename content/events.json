@@ -1,0 +1,24 @@
+{
+"ev":[
+{"t":"راهزنان از تاریکی بیرون آمدند و به قطار حمله کردند!|Raiders emerge from the dark and attack the train!","ch":[
+ {"t":"بجنگ|Fight","f":{"sanity":-8},"r":"با سنگ و آهن دفاع کردید؛ چند زخم برداشتید.|You defended with stones and iron; you took some wounds."},
+ {"t":"رشوه بده (۱۵ ضایعات)|Bribe (15 scrap)","co":{"scrap":15},"f":{"sanity":-2},"r":"راهزنان پول گرفتند و رفتند.|They took the money and left."},
+ {"t":"فرار کن (سوخت ۱۰−)|Flee (fuel -10)","f":{"fuel":-10,"sanity":-4},"r":"با سرعت گریختید؛ نزدیک بود.|You sped away; it was close."}]},
+{"t":"موتور جا ماند و قطار کُند شد.|The engine stalled and the train slowed.","ch":[
+ {"t":"تعمیر کن (۱۰ ضایعات)|Repair (10 scrap)","co":{"scrap":10},"f":{},"r":"با تکّه‌ای آهن درستش کردی.|You fixed it with a scrap of iron."},
+ {"t":"ادامه بده|Push on","f":{"fuel":-8,"sanity":-5},"r":"قطار ناله‌کنان رفت.|The train groaned onward."}]},
+{"t":"مسافری بیمار شد و تب کرد.|A passenger fell sick with fever.","ch":[
+ {"t":"دارو بده (۱۲ ضایعات)|Give medicine (12 scrap)","co":{"scrap":12},"f":{"sanity":4},"r":"دارو اثر کرد.|The medicine worked."},
+ {"t":"استراحت بده (زمان)|Let them rest (time)","f":{"time":-20,"sanity":-3},"r":"وقت گذشت و تب بالا رفت.|Time passed and the fever rose."},
+ {"t":"نادیده بگیر|Ignore","f":{"sanity":-9},"r":"سرفه‌هایش تا صبح رهایت نکرد.|Their coughs haunted you all night."}]},
+{"t":"طوفانی سهمگین از راه رسید.|A violent storm rolled in.","ch":[
+ {"t":"آهسته برو|Go slow","f":{"time":-20,"fuel":-4},"r":"آهسته و سالم گذشتی.|You passed slowly and safely."},
+ {"t":"پرش کن|Dash through","f":{"fuel":-10,"sanity":-7},"r":"از دل طوفان پریدی.|You leapt through the storm."}]},
+{"t":"قطار به سکویی خالی رسید؛ اما چراغ‌ها روشن بودند.|The train reached an empty platform, yet the lights were on.","ch":[
+ {"t":"پیاده شو و بگرد|Step off and search","f":{"sanity":-10},"cl":"c4","r":"چیزی دیدی که نباید.|You saw what you should not have."},
+ {"t":"عبور کن|Pass by","f":{"sanity":-3},"r":"از کنارِ سایه‌ها گذشتی.|You passed the shadows by."}]},
+{"t":"سیگنالی ناشناس روی رادیوی قطار پیچید.|An unknown signal hisses on the train radio.","ch":[
+ {"t":"گوش کن|Listen","f":{"sanity":5},"cl":"c2","r":"صدایی حرف می‌زد... شاید خودت.|A voice spoke... maybe your own."},
+ {"t":"خاموش کن|Switch off","f":{"sanity":-2},"r":"سکوت برگشت.|Silence returned."}]}
+]
+}

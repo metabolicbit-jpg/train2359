@@ -6,7 +6,7 @@
 "restart":"سفر مجدد|Play again","journal":"دفترچهٔ سرنخ‌ها|Clue journal","gotIt":"فهمیدم|Got it","back":"بازگشت|Back",
 "station":"ایستگاه|Station","path":"مسیر|Route","chase":"تعقیب|Pursuit","acts":"اقدام‌ها|Actions","pur":"تعقیب‌کننده|Pursuer",
 "explore":"کاوش|Explore","market":"بازار|Market","pax":"مسافران|Passengers","upgrade":"ارتقاء|Upgrade",
-"rest":"استراحت|Rest","restS":"۱ اقدام · +روان|1 action · +sanity","journalB":"دفترچه|Journal",
+"rest":"استراحت|Rest","restS":"۱ اقدام · +سلامت|1 action · +health","journalB":"دفترچه|Journal",
 "depart":"حرکت به ایستگاه بعد|Depart","mainD":"سکوی «{a}» خلوت است. چه می‌کنی؟|The {a} platform is quiet. What do you do?",
 "explT":"کاوش ایستگاه|Explore station","explS":"دنبال غذا، سوخت، ضایعات و سرنخ بگرد.|Search for food, fuel, scrap and clues.",
 "done":"کاوش‌شده|explored","oneA":"۱ اقدام|1 action","result":"نتیجه|Result",
@@ -24,20 +24,33 @@
 "onTrip":"در مسیر... سوت قطار در شب می‌پیچد|On the way... a whistle pierces the night",
 "boarded":"مسافرِ تازه سوار شد.|A new passenger boarded.",
 "stns":"ایستگاه‌ها: |Stations: ","comp":"همراهان: |Companions: ","cluesW":"سرنخ‌ها: |Clues: ",
-"sane":"روان: |Sanity: ","foodW":"غذا: |Food: ","fuelW":"سوخت: |Fuel: ","noClue":"هنوز سرنخی پیدا نکرده‌ای. کاوش کن.|No clues yet. Go explore."
+"sane":"سلامت: |Health: ","foodW":"غذا: |Food: ","fuelW":"سوخت: |Fuel: ",
+"noClue":"هنوز سرنخی پیدا نکرده‌ای. کاوش کن.|No clues yet. Go explore.",
+"ach":"افتخارات|Accolades",
+"scSurv":"بقا|Survival",
+"scTruth":"حقیقت|Truth",
+"scBond":"پیوند|Bond"
 },
 "res":[
 {"k":"food","l":"غذا|Food","c":"#ffb454","cr":20},
 {"k":"fuel","l":"سوخت|Fuel","c":"#5ad1ff","cr":10},
 {"k":"time","l":"زمان|Time","c":"#c89bff","cr":1},
-{"k":"sanity","l":"روان|Sanity","c":"#6ee7a8","cr":30}
+{"k":"sanity","l":"سلامت|Health","c":"#6ee7a8","cr":30}
 ],
 "intro":"ساعت ۲۳:۵۹ است.\nقطار با سوتِ بلندی راه می‌افتد.\nنمی‌دانی چطور سوار شدی، مقصد کجاست.\nیادداشتی روی صندلی:\n«هر کس را سوار کنی بر تو اثر می‌گذارد.\nمنابع کم است. زنده بمان.»|It is 23:59.\nThe train lurches off with a long whistle.\nYou do not know how you boarded, nor where it goes.\nA note on the seat:\n'Whoever you let on will change you.\nSupplies are low. Stay alive.'",
 "endings":{
 "pursued":{"t":"پایانِ تعقیب|Ending: Pursued","d":"قطارِ سیاه رسید. «حالا نوبتِ توست.»|The black train arrived. 'Now it is your turn.'"},
-"hope":{"t":"پایانِ امید|Ending: Hope","d":"به روشنایی رسیدید و همه سالم پیاده شدند.|You reached the light and all stepped off safe."},
+"hope":{"t":"پایانِ امید|Ending: Hope","d":"به روشنایی رسیدید و همه سالم پیاده شدند. تو زنده ماندی و حقیقت را فهمیدی.|You reached the light and all stepped off safe. You survived and learned the truth."},
 "mystery":{"t":"پایانِ مرموز|Ending: Mystery","d":"حقیقت را کشف کردی و بخشی از قطار شدی.|You found the truth and became part of the train."},
 "ruin":{"t":"پایانِ نابودی|Ending: Ruin","d":"قطار در تاریکی از هم پاشید.|The train fell apart in the dark."},
 "bitter":{"t":"پایانِ تلخ|Ending: Bitter","d":"رسیدید، اما خسته و کم.|You arrived, weary and few."}
+},
+"clues":{
+"c1":"یادداشتی با دست‌خطی لرزان: «او دوباره سوار شد... او همیشه سوار می‌شود.»|A note in shaky hand: 'He boarded again... he always boards.'",
+"c2":"ضبط‌صوتی فرسوده که فقط صدای تق‌تقِ ریل را پخش می‌کند — و بعد، صدای نفسِ کسی.|A worn tape that only plays the clatter of rails, then the breath of someone.",
+"c3":"علامتی روی دیوار: دایره‌ای که خطی از میانش گذشته است.|A mark on the wall: a circle crossed by a line.",
+"c4":"جسدی بی‌نام کنار ریل؛ در جیبش بلیتی که هیچ تاریخی ندارد.|A nameless body by the rails; a ticket with no date in its pocket.",
+"c5":"نقشهٔ نیم‌سوز که مسیر را به جایی نشان می‌دهد که روی هیچ جغرافیایی نیست.|A half-burnt map pointing to a place on no chart.",
+"c6":"کتیبه‌ای بر سکوی آخر: «قطار کسی را می‌برد که وقتش تمام شده باشد.»|An inscription on the last platform: 'The train takes those whose time is up.'"
 }
 }

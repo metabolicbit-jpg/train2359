@@ -10,6 +10,6 @@
 {"id":"cemetery","nm":"گورستان|Cemetery","o":[{"w":2,"r":"سنگ‌قبری با نامِ خودت.|A gravestone with your own name.","f":{"sanity":-12},"cl":"c6"},{"w":3,"r":"چیزهایی که جا مانده.|Things left behind.","f":{"scrap":12}},{"w":2,"r":"دعایی خواندی و آرام شدی.|You prayed and grew calm.","f":{"sanity":7}}]},
 {"id":"old","nm":"سکوی قدیمی|Old platform","o":[{"w":2,"r":"تابلویی که پاک شده بود.|A sign wiped clean.","f":{},"cl":"c5"},{"w":3,"r":"کیفی پر از ضایعات فلزی.|A bag of metal scrap.","f":{"scrap":14}},{"w":2,"r":"سکوتی که توی سرت پیچید.|A silence that rang in your head.","f":{"sanity":-4}}]}
 ],
-"sn":["خاکستر|Ash","باد|Wind","کافهٔ میان‌راهی|Roadside cafe","پل شکسته|Broken bridge","کودکان|Children","تونل تاریک|Dark tunnel","باران|Rain","بازار شبانه|Night market","سکوت|Silence","تعمیرگاه|Workshop","گل|Flowers","گردنهٔ کوه|Mountain pass","آینه|Mirror","بارِ رهاشده|Freight","سپیده|Dawn"],
+"sn":["سی و سه پل","تجریش","بهارستان","وکیل آباد","گلستان","میدان صنعت","برج میلاد","فرودگاه مهرآباد","راه آهن","فردوسی","حافظ","سعدی","خیام","رودکی","آزادی","عالی قاپو","بازار وکیل","نیشاپور","هراز","نخلستان"],
 "arch":[{"id":"ind","nm":"صناعی|Industrial","f":4,"u":3},{"id":"agr","nm":"کشاورزی|Agricultural","f":2,"u":5},{"id":"town","nm":"شهری|Town","f":3,"u":4},{"id":"ruin","nm":"ویرانه|Ruins","f":5,"u":6}]
 }

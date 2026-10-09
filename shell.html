@@ -10,11 +10,11 @@
 html,body{width:100%;height:100%;overflow:hidden;background:#080a18;color:#fff;font-family:'Vazirmatn',-apple-system,Tahoma,Arial,sans-serif;user-select:none;-webkit-user-select:none;overscroll-behavior:none}
 #c{position:fixed;inset:0;width:100%;height:100%;display:block;touch-action:none}
 .ic{width:16px;height:16px;display:inline-block;vertical-align:middle;flex:none}.ic.s{width:13px;height:13px}
-.top{position:fixed;top:0;left:0;right:0;z-index:3;pointer-events:none;padding:calc(6px + env(safe-area-inset-top)) 10px 0;display:flex;flex-direction:column;gap:7px}
+.tbar{position:fixed;top:0;left:0;right:0;z-index:3;pointer-events:none;padding:calc(6px + env(safe-area-inset-top)) 10px 0;display:flex;flex-direction:column;gap:7px}
 .hud{display:flex;justify-content:space-between;align-items:center;gap:8px}
 .clock{font-weight:800;font-size:18px;color:#ffd76a;text-shadow:0 0 14px rgba(255,200,80,.45);font-variant-numeric:tabular-nums}
 .hudR{display:flex;align-items:center;gap:5px}
-.stn{font-size:11px;color:#ddd;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);padding:4px 9px;border-radius:5px;white-space:nowrap}
+.stn{display:none}
 .scrapB{display:flex;align-items:center;gap:4px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);padding:4px 8px;border-radius:5px;color:#d0d7e6;font-size:12px;font-weight:700;white-space:nowrap}
 .hbtn{pointer-events:auto;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);color:#fff;border-radius:5px;min-width:30px;height:28px;padding:0 6px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:11px;font-weight:700;font-family:inherit;flex:none}
 .res{display:flex;justify-content:center;gap:5px;flex-wrap:nowrap;width:100%}
@@ -50,7 +50,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#080a18;color:#fff;f
 #bubble{position:fixed;left:23%;top:18%;max-width:66%;background:rgba(10,14,26,.96);border:1px solid rgba(255,215,120,.38);border-radius:5px;padding:9px 11px;font-size:12px;line-height:1.7;color:#eee;z-index:7;box-shadow:0 8px 24px rgba(0,0,0,.45);cursor:pointer}
 #bubble:after{content:'';position:absolute;inset-inline-start:-9px;top:14px;border:6px solid transparent;border-inline-end-color:rgba(255,215,120,.38)}
 #bubble .who{display:block;font-size:10px;color:#ffd76a;font-weight:700;margin-bottom:2px}
-body.hideui .top,body.hideui .panel,body.hideui .tnote,body.hideui #bubble{display:none!important}
+body.hideui .tbar,body.hideui .panel,body.hideui .tnote,body.hideui #bubble{display:none!important}
 .overlay{position:fixed;inset:0;z-index:6;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:22px;background:radial-gradient(ellipse at 50% 26%,rgba(46,34,80,.72),rgba(4,6,14,.97))}
 h1{font-size:32px;color:#fff;font-weight:800;margin-bottom:10px}h1 span{color:#ffd76a}
 .tag{color:#ccc;font-size:13px;line-height:1.95;margin-bottom:20px;max-width:430px;white-space:pre-line}
@@ -76,7 +76,7 @@ h1{font-size:32px;color:#fff;font-weight:800;margin-bottom:10px}h1 span{color:#f
 <button id="hideBtn"></button>
 <button id="vetBtn" class="hidden"></button>
 <div id="bubble" class="hidden"></div>
-<div class="top">
+<div class="tbar">
   <div class="hud">
     <div class="clock" id="clock">۲۳:۵۹</div>
     <div class="hudR">

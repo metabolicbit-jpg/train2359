@@ -30,7 +30,6 @@ html,body{width:100%;height:100%;overflow:hidden;background:#080a18;color:#fff;f
 .track{flex:1;height:4px;border-radius:2px;background:rgba(255,255,255,.12);overflow:hidden}
 .track i{display:block;height:100%;width:0;border-radius:2px;background:linear-gradient(90deg,#ffd76a,#ff9d3c);transition:width .5s}
 .track.red i{background:linear-gradient(90deg,#ff5a5a,#8b1e1e)}
-.pax{display:flex;justify-content:center;gap:6px;opacity:.9;width:100%}
 .panel{position:fixed;left:0;right:0;bottom:0;padding:11px 13px;padding-bottom:calc(11px + env(safe-area-inset-bottom));z-index:4;background:linear-gradient(0deg,rgba(6,8,18,.98),rgba(6,8,18,.72) 66%,rgba(6,8,18,0));display:flex;flex-direction:column;gap:7px;align-items:center;max-height:60%;overflow-y:auto}
 .ptitle{color:#fff;font-size:13.5px;font-weight:800;text-align:center;display:flex;align-items:center;gap:6px;justify-content:center;flex-wrap:wrap}
 .ptitle b{color:#ffd76a}.ptitle span{color:#c89bff}
@@ -45,7 +44,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#080a18;color:#fff;f
 .pnote{font-size:10px;color:#777}
 .tnote{position:fixed;left:0;right:0;bottom:calc(26px + env(safe-area-inset-bottom));text-align:center;color:#eee;font-size:13.5px;z-index:4;pointer-events:none;opacity:0;transition:opacity .35s}.tnote.on{opacity:1}
 .hidden{display:none!important}
-.alert{position:fixed;left:50%;top:calc(150px + env(safe-area-inset-top));transform:translateX(-50%) translateY(-14px);z-index:8;width:min(92vw,380px);display:flex;align-items:flex-start;gap:10px;background:linear-gradient(135deg,rgba(18,22,40,.98),rgba(10,13,26,.98));border:1px solid rgba(255,255,255,.16);border-inline-start:4px solid #ffd76a;border-radius:8px;padding:11px 13px;box-shadow:0 12px 34px rgba(0,0,0,.55);opacity:0;pointer-events:none;transition:opacity .35s,transform .35s}
+.alert{position:fixed;left:50%;top:calc(120px + env(safe-area-inset-top));transform:translateX(-50%) translateY(-14px);z-index:8;width:min(92vw,380px);display:flex;align-items:flex-start;gap:10px;background:linear-gradient(135deg,rgba(18,22,40,.98),rgba(10,13,26,.98));border:1px solid rgba(255,255,255,.16);border-inline-start:4px solid #ffd76a;border-radius:8px;padding:11px 13px;box-shadow:0 12px 34px rgba(0,0,0,.55);opacity:0;pointer-events:none;transition:opacity .35s,transform .35s}
 .alert.on{opacity:1;transform:translateX(-50%) translateY(0)}
 .alert .ai{flex:none;width:26px;height:26px;display:flex;align-items:center;justify-content:center}
 .alert .ai .ic{width:22px;height:22px}
@@ -101,7 +100,6 @@ h1{font-size:32px;color:#fff;font-weight:800;margin-bottom:10px}h1 span{color:#f
     <div class="barRow"><span class="barLbl" id="lblPath">مسیر</span><div class="track"><i id="progFill"></i></div></div>
     <div class="barRow"><span class="barLbl" id="lblChase">تعقیب</span><div class="track red"><i id="purFill"></i></div></div>
   </div>
-  <div class="pax" id="pax"></div>
 </div>
 <div class="panel" id="panel"></div>
 <div class="tnote" id="tnote"></div>
@@ -118,7 +116,7 @@ h1{font-size:32px;color:#fff;font-weight:800;margin-bottom:10px}h1 span{color:#f
 <script>
 (function(){
 var BASE='https://cdn.jsdelivr.net/gh/metabolicbit-jpg/train2359@main/';
-var VER='v41';
+var VER='v42';
 var MODS=['src/lang.js','src/audio.js','src/render.js','src/ui.js','src/core.js','src/main.js'];
 function cg(k){try{return localStorage.getItem(k);}catch(e){return null;}}
 function cs(k,v){try{localStorage.setItem(k,v);}catch(e){}}

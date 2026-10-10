@@ -138,7 +138,7 @@ var Sc=(function(){var c=document.getElementById('c'),x=c.getContext('2d'),W=0,H
     else{x.beginPath();x.moveTo(bx+14,by+b.h-14);x.lineTo(bx+30,by+16);x.lineTo(bx+46,by+b.h-14);x.closePath();x.fill();x.beginPath();x.moveTo(bx+50,by+b.h-14);x.lineTo(bx+66,by+16);x.lineTo(bx+82,by+b.h-14);x.closePath();x.fill();}}
    x.fillStyle='#0d1220';x.fillRect(bx+6,by+b.h,5,top-(by+b.h));x.fillRect(bx+b.w-11,by+b.h,5,top-(by+b.h));}
   x.fillStyle='rgba(20,26,46,.96)';x.fillRect(cx-380,top-8,760,16);x.fillStyle='rgba(255,215,120,.34)';x.fillRect(cx-380,top-8,760,2);
-  for(var li=-3;li<=3;li++)lamp(cx+li*120,top);clock(cx+250,top);x.restore();}
+  for(var li=-3;li<=3;li++)lamp(cx+li*120,top);clock(cx+95,top);x.restore();}
  function drawFigs(){if(!st.on)return;var dx=W*.5+(st.base-sc);for(var i=0;i<st.figs.length;i++){var f=st.figs[i];person(dx+f.lx,f,Math.min(H*.1,W*.14)*((f.tp.indexOf('kid')>=0)?.7:1));}}
  function perchTarget(bx){var list=[];
   if(st.on){var cx=W*.5+(st.base-sc);for(var li=-3;li<=3;li++)list.push({x:cx+li*120,y:GY()-82});}
@@ -157,7 +157,7 @@ var Sc=(function(){var c=document.getElementById('c'),x=c.getContext('2d'),W=0,H
    b.x+=(b.px-b.x)*Math.min(1,dt*3.2);b.y+=(b.py-b.y)*Math.min(1,dt*3.2);
    if(Math.abs(b.px-b.x)<1.6&&Math.abs(b.py-b.y)<1.6){b.x=b.px;b.y=b.py;if(b.t>b.perT){b.st='fly';b.t=0;b.vx=(Math.random()<.5?-1:1)*(22+Math.random()*24);b.vy=-(4+Math.random()*9);b.perT=6+Math.random()*9;}}
   }}}
- function drawBirds(){for(var i=0;i<birds.length;i++){var b=birds[i];var fly=(b.st==='fly');x.save();x.translate(b.x,b.y);x.lineJoin='round';x.fillStyle='rgba(9,11,20,.96)';x.strokeStyle='rgba(175,198,238,.5)';x.lineWidth=.9;
+ function drawBirds(){if(!st.on)return;for(var i=0;i<birds.length;i++){var b=birds[i];var fly=(b.st==='fly');x.save();x.translate(b.x,b.y);x.lineJoin='round';x.fillStyle='rgba(9,11,20,.96)';x.strokeStyle='rgba(175,198,238,.5)';x.lineWidth=.9;
   if(b.type==='bat'){var f=fly?Math.sin(b.flap)*.9:.22;
    x.beginPath();x.moveTo(0,0);x.quadraticCurveTo(-4.2,-3.6-f*3.6,-8,-.6);x.quadraticCurveTo(-4,1.5,0,1.9);x.quadraticCurveTo(4,1.5,8,-.6);x.quadraticCurveTo(4.2,-3.6-f*3.6,0,0);x.closePath();x.fill();x.stroke();}
   else{

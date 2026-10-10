@@ -7,9 +7,10 @@ function T59boot(){
  Sc.rs();Sc.bd();
  document.getElementById('mute').addEventListener('click',function(){var m=Au.toggle();this.innerHTML=ic(m?'muted':'sound','s');});
  document.getElementById('musicBtn').addEventListener('click',function(){var o=Au.toggleMusic();this.innerHTML=ic(o?'musicOff':'music','s');});
+ document.getElementById('spdBtn').addEventListener('click',function(){try{cycSpeed();}catch(e){}});
  document.getElementById('hideBtn').addEventListener('click',function(){var h=document.body.classList.toggle('hideui');this.innerHTML=ic(h?'eye':'eyeOff','s');});
  document.getElementById('bubble').addEventListener('click',function(){nAdv();});
- vetB.addEventListener('click',function(){if(!started||tr||TIPMODE)return;TIPMODE=true;Sc.tip(true);try{nSay(SL(TQ));}catch(e){}setTimeout(function(){if(TIPMODE){TIPMODE=false;Sc.tip(false);}},8000);});
+ vetB.addEventListener('click',function(){if(!started||tr)return;TIPMODE=true;Sc.tip(true);try{nClear();}catch(e){}try{nSay(SL(TQ));}catch(e){}setTimeout(function(){if(TIPMODE){TIPMODE=false;Sc.tip(false);}},25000);});
  document.getElementById('langBtn').addEventListener('click',function(){LANG=LANG==='fa'?'en':'fa';if(DATA)appLang();});
  document.getElementById('startBtn').addEventListener('click',function(){Au.init();Au.music();newGame();});
  document.getElementById('helpBtnTitle').addEventListener('click',function(){document.getElementById('helpScreen').classList.remove('hidden');});

@@ -21,11 +21,11 @@ var ENDEF={
  alone:{t:'پایانِ تنها|Alone',d:'همه را از دست دادی.|You lost them all.'},
  bitter:{t:'پایانِ تلخ|Bitter',d:'به ایستگاه آخر رسیدی، اما چیزی از خودت جا گذاشتی.|You reached the last station, but left a part of yourself behind.'}
 };
-var tr=false,tt=0,pa=null,pn=null,started=false,peak=290,dur=3.4,TIPMODE=false;
+var tr=false,tt=0,pa=null,pn=null,started=false,peak=290,dur=6,TIPMODE=false;
 var SPD=1,DIST=20;
 var vetB=document.getElementById('vetBtn');
 function byId(id){for(var i=0;i<PO.length;i++)if(PO[i].id===id)return PO[i];return null;}
-function cycSpeed(){SPD=SPD===1?2:(SPD===2?4:1);var b=document.getElementById('spdBtn');if(b)b.textContent=N(SPD)+'×';if(tr){var p=dur?tt/dur:0;dur=DIST/SPD;tt=p*dur;}return SPD;}
+function cycSpeed(){SPD=SPD===1?2:(SPD===2?4:1);var b=document.getElementById('spdBtn');if(b)b.textContent=N(SPD)+'×';if(tr&&dur>0){var p=tt/dur;dur=DIST/SPD;tt=p*dur;}return SPD;}
 function stationFlavor(){var s=G.S();if(Math.random()<.35&&s.scrap<200){s.scrap+=2;try{nSay(SL('یک تکهٔ دورریختنی روی سکو پیدا کردی. +۲ ضایعات.|You find something on the platform. +2 scrap.'));}catch(e){}}if(s.pax.length&&Math.random()<.5){var p=pk(s.pax);var l=p.say;if(l&&l.length){try{nSay(SL(p.nm)+': '+SL(pk(l)));}catch(e){}}}}
 function triggerStory(){var s=G.S();
  if(s.pur>70&&!GF.purW){GF.purW=1;try{nSay(SL(REACT.pur));}catch(e){}}
@@ -62,12 +62,13 @@ function talk(i){var s=G.S(),p=s.pax[i];if(!p)return;if(s.time<ACT){UI.setPax(SL
 function rest(){var s=G.S();if(s.time<ACT)return;s.time-=ACT;s.sanity=clamp(s.sanity+12);Au.good();UI.res();G.save();UI.show('main');}
 function depart(){Au.click();UI.show('route');}
 function go(m){var s=G.S();Sc.setNpc(false);vetB.classList.add('hidden');if(m==='fast'){s.fuel=clamp(s.fuel-10);s.pur=clamp(s.pur-8,0,100);peak=520;}else if(m==='stealth'){s.time=clamp(s.time-20,0,100);s.pur=clamp(s.pur+3,0,100);peak=170;}else{s.pur=clamp(s.pur+8,0,100);peak=270;}
- DIST=20+ri(21);dur=DIST/(SPD||1);Sc.setBiome(ri(4));s.time=clamp(s.time-TRAV,0,100);Sc.setMode(m);Re.end();
+ DIST=20+ri(21);if(!(SPD>0))SPD=1;dur=DIST/SPD;if(!(dur>0))dur=6;try{if(Sc.setBiome)Sc.setBiome(ri(4));}catch(e){}
+ s.time=clamp(s.time-TRAV,0,100);Sc.setMode(m);Re.end();
  for(var i=0;i<s.pax.length;i++){var p=s.pax[i];p.md=clamp((p.md==null?100:p.md)-9);}
  var lost=0;for(var j=s.pax.length-1;j>=0;j--){if(s.pax[j].md<=0){lost++;s.pax.splice(j,1);}}
  if(lost){s.lost+=lost;s.pur=clamp(s.pur+5,0,100);s.sanity=clamp(s.sanity-12);try{nSay(SL('یکی از همراهان تاب نیاورد و رفت...|One companion could not hold on...'));}catch(e){}}
- Sc.board();var ev=Math.random()<.38?pk(EVo||[]):null;UI.hide();UI.note(true,S('onTrip'));Au.horn();Sc.shake(m==='fast'?.9:(m==='stealth'?.25:.5));tr=true;tt=0;window.__sp=peak;pa={ev:ev};G.save();UI.res();}
-function arrive(){tr=false;window.__sp=0;Au.brake();Sc.setMode('');var s=G.S();s.st++;s.d++;var p=pa||{};pa=null;UI.note(false);
+ Sc.board();var ev=Math.random()<.38?pk(EVo||[]):null;UI.hide();UI.note(true,S('onTrip'));try{Au.horn();}catch(e){}try{Sc.shake(m==='fast'?.9:(m==='stealth'?.25:.5));}catch(e){}tr=true;tt=0;window.__sp=peak;pa={ev:ev};G.save();UI.res();}
+function arrive(){tr=false;window.__sp=0;try{Au.brake();}catch(e){}Sc.setMode('');var s=G.S();s.st++;s.d++;var p=pa||{};pa=null;UI.note(false);
  if(s.pur>=75&&!GF.pw75){GF.pw75=1;nSay(SL('اون نزدیکه... باید بریم!|It is close... we must go!'));Au.bad();}
  if(s.pur>=100||s.time<=0||s.food<=0||s.fuel<=0||s.sanity<=0){end();return;}if(s.st>s.tot){end();return;}
  if(p.ev){UI.setEv(p.ev);UI.show('event');UI.res();G.save();return;}startS();Sc.leavers();}

@@ -27,7 +27,14 @@ var TIP={
  rest:'استراحت: ۴ زمان می‌دهی و ۱۲ سلامت می‌گیری.|Rest: spend 4 time to gain 12 health.',
  depart:'تند = سریع و پرخرج؛ مخفی = آهسته و بی‌خطر؛ معمولی = میانه. تعقیب را چشمت باشد.|Fast, Stealth or Normal route — and always watch the pursuit.'
 };
-var TQ='ارباب، برای کدام قسمت راهنمایی می‌خواهی؟ روی همان دکمه بزن.|Boss, which part? Tap that button.';
+var TQ='ارباب، در خدمت‌گذاری حاضرم؛ هر جا نیاز به راهنما داری، روی همان دکمه بزن.|Boss, I am at your service; tap whichever button you need help with.';
+var ALERTS={
+ food:{i:'food',c:'#ffb454',t:'غذا کم شده|Food is low',m:'غذا زیر ۲۵ است. با کاوش یا بازار ذخیره کن، وگرنه سلامت پایین می‌آید.|Food under 25 — explore or buy before sanity drops.'},
+ fuel:{i:'fuel',c:'#5ad1ff',t:'سوخت کم شده|Fuel is low',m:'سوخت زیر ۱۴ است؛ برای سفر بعدی حتماً سوخت تهیه کن.|Fuel under 14 — refuel before the next trip.'},
+ sanity:{i:'sanity',c:'#6ee7a8',t:'سلامت روان افت کرد|Sanity is low',m:'روان زیر ۳۲ است. استراحت کن یا با مسافران گفت‌وگو کن.|Sanity under 32 — rest or talk to passengers.'},
+ time:{i:'time',c:'#c89bff',t:'زمان اندک است|Time is short',m:'زمان زیر ۲۰ است. اولویت را به کارهای ضروری بده و زود حرکت کن.|Time under 20 — prioritise and depart soon.'},
+ pur:{i:'tension',c:'#ff5a5a',t:'تعقیب نزدیک است|Pursuer closing in',m:'تعقیب بالای ۷۰ است. مسیر «تند» را انتخاب کن تا عقب بیفتد.|Pursuer over 70 — take the Fast route to shake it off.'}
+};
 var STORY=[
  {st:5,t:'در شیشهٔ واگن به انعکاس خودت نگاه می‌کنی... مسافران دیده می‌شوند، اما جای تو در انعکاس خالی است.|You look at your reflection in the carriage glass... the passengers are there, but your place in it is empty.'},
  {st:7,t:'از وقتی سوار شدی، یک لقمه هم نخوردی... ولی نمردی. این عجیب نیست؟|Since you boarded, you haven\'t taken a single bite... yet you haven\'t died.'},

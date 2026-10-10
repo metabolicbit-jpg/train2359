@@ -14,7 +14,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#080a18;color:#fff;f
 .hud{display:flex;justify-content:space-between;align-items:center;gap:8px}
 .clock{font-weight:800;font-size:18px;color:#ffd76a;text-shadow:0 0 14px rgba(255,200,80,.45);font-variant-numeric:tabular-nums}
 .hudR{display:flex;align-items:center;gap:5px}
-.stn{display:none}
+.stn{font-size:11px;color:#ddd;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);padding:4px 9px;border-radius:5px;white-space:nowrap}
 .scrapB{display:flex;align-items:center;gap:4px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);padding:4px 8px;border-radius:5px;color:#d0d7e6;font-size:12px;font-weight:700;white-space:nowrap}
 .hbtn{pointer-events:auto;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);color:#fff;border-radius:5px;min-width:30px;height:28px;padding:0 6px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:11px;font-weight:700;font-family:inherit;flex:none}
 .res{display:flex;justify-content:center;gap:5px;flex-wrap:nowrap;width:100%}
@@ -45,12 +45,19 @@ html,body{width:100%;height:100%;overflow:hidden;background:#080a18;color:#fff;f
 .pnote{font-size:10px;color:#777}
 .tnote{position:fixed;left:0;right:0;bottom:calc(26px + env(safe-area-inset-bottom));text-align:center;color:#eee;font-size:13.5px;z-index:4;pointer-events:none;opacity:0;transition:opacity .35s}.tnote.on{opacity:1}
 .hidden{display:none!important}
+.alert{position:fixed;left:50%;top:calc(150px + env(safe-area-inset-top));transform:translateX(-50%) translateY(-14px);z-index:8;width:min(92vw,380px);display:flex;align-items:flex-start;gap:10px;background:linear-gradient(135deg,rgba(18,22,40,.98),rgba(10,13,26,.98));border:1px solid rgba(255,255,255,.16);border-inline-start:4px solid #ffd76a;border-radius:8px;padding:11px 13px;box-shadow:0 12px 34px rgba(0,0,0,.55);opacity:0;pointer-events:none;transition:opacity .35s,transform .35s}
+.alert.on{opacity:1;transform:translateX(-50%) translateY(0)}
+.alert .ai{flex:none;width:26px;height:26px;display:flex;align-items:center;justify-content:center}
+.alert .ai .ic{width:22px;height:22px}
+.alert .ab{display:flex;flex-direction:column;gap:2px;text-align:start}
+.alert .ab b{font-size:12.5px;color:#fff}
+.alert .ab span{font-size:11px;color:#c9cfe0;line-height:1.6}
 #hideBtn{position:fixed;inset-inline-start:8px;top:50%;transform:translateY(-50%);z-index:9;pointer-events:auto;background:rgba(12,16,32,.55);border:1px solid rgba(255,255,255,.18);color:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;cursor:pointer}
 #vetBtn{position:fixed;left:3%;top:22%;width:24%;height:30%;z-index:7;background:transparent;border:none;cursor:pointer}
 #bubble{position:fixed;left:23%;top:18%;max-width:66%;background:rgba(10,14,26,.96);border:1px solid rgba(255,215,120,.38);border-radius:5px;padding:9px 11px;font-size:12px;line-height:1.7;color:#eee;z-index:7;box-shadow:0 8px 24px rgba(0,0,0,.45);cursor:pointer}
 #bubble:after{content:'';position:absolute;inset-inline-start:-9px;top:14px;border:6px solid transparent;border-inline-end-color:rgba(255,215,120,.38)}
 #bubble .who{display:block;font-size:10px;color:#ffd76a;font-weight:700;margin-bottom:2px}
-body.hideui .tbar,body.hideui .panel,body.hideui .tnote,body.hideui #bubble{display:none!important}
+body.hideui .tbar,body.hideui .alert,body.hideui .panel,body.hideui .tnote,body.hideui #bubble{display:none!important}
 .overlay{position:fixed;inset:0;z-index:6;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:22px;background:radial-gradient(ellipse at 50% 26%,rgba(46,34,80,.72),rgba(4,6,14,.97))}
 h1{font-size:32px;color:#fff;font-weight:800;margin-bottom:10px}h1 span{color:#ffd76a}
 .tag{color:#ccc;font-size:13px;line-height:1.95;margin-bottom:20px;max-width:430px;white-space:pre-line}
@@ -76,6 +83,7 @@ h1{font-size:32px;color:#fff;font-weight:800;margin-bottom:10px}h1 span{color:#f
 <button id="hideBtn"></button>
 <button id="vetBtn" class="hidden"></button>
 <div id="bubble" class="hidden"></div>
+<div id="alert" class="alert hidden"></div>
 <div class="tbar">
   <div class="hud">
     <div class="clock" id="clock">۲۳:۵۹</div>
